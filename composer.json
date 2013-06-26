@@ -17,7 +17,8 @@
     },
     "autoload" : {
         "psr-0" : {
-            "Tavs" : "lib"
+            "Tavs\\" : "lib"
         }
-    }
+    },
+    "include-path": ["lib/"]
 }
