@@ -1,0 +1,21 @@
+{
+    "name" : "tsantos/zf1-library",
+    "type" : "library",
+    "description" : "Biblioteca de classes para projetos baseados no Zend Framework 1",
+    "keywords" : ["zf1","doctrine","twig"],
+    "authors" : [
+        {
+            "name" : "Tales Santos",
+            "email" : "tales.augusto.santos@gmail.com"
+        }
+    ],
+    "require" : {
+        "php" : ">=5.3.0",
+        "zendframework/zendframework1":"1.12.*"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Tavs" : "lib"
+        }
+    }
+}
