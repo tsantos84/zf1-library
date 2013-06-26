@@ -2,7 +2,7 @@
 
 namespace Tavs\Application\Resource;
 
-use My\View;
+use Tavs\View;
 
 class Twig extends \Zend_Application_Resource_View
 {
