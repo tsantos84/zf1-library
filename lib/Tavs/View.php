@@ -1,11 +1,11 @@
 <?php
-namespace My;
+namespace Tavs;
 
-use My\Twig\Extension;
+use Tavs\Twig\Extension;
 
-use My\Twig\HelperFunction;
+use Tavs\Twig\HelperFunction;
 
-use My\Twig\Environment;
+use Tavs\Twig\Environment;
 
 class View extends \Zend_View_Abstract
 {

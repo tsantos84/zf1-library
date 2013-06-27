@@ -1,6 +1,6 @@
 <?php
 
-namespace My\Twig;
+namespace Tavs\Twig;
 
 /**
  * Extensão do Twig
