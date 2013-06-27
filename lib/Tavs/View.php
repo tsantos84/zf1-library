@@ -1,6 +1,8 @@
 <?php
 namespace Tavs;
 
+use Tavs\Twig\Extension;
+
 class View extends \Zend_View_Abstract
 {
     /**
@@ -17,6 +19,8 @@ class View extends \Zend_View_Abstract
             new \Twig_Loader_Filesystem(),
             $config
         );
+
+        $this->_environmnet->addExtension(new Extension($this));
 
         parent::__construct($config);
     }
