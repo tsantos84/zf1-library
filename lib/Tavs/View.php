@@ -3,10 +3,6 @@ namespace Tavs;
 
 use Tavs\Twig\Extension;
 
-use Tavs\Twig\HelperFunction;
-
-use Tavs\Twig\Environment;
-
 class View extends \Zend_View_Abstract
 {
     /**
