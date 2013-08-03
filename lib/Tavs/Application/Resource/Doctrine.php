@@ -4,6 +4,7 @@ namespace Tavs\Application\Resource;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
+use Tavs\Db\Profiler\DoctrineProfiler;
 
 class Doctrine extends \Zend_Application_Resource_ResourceAbstract
 {
@@ -39,6 +40,11 @@ class Doctrine extends \Zend_Application_Resource_ResourceAbstract
 
                 $config = Setup::createAnnotationMetadataConfiguration($paths, true);
                 $this->_em = EntityManager::create($dbParams, $config);
+
+                // profiler
+                $profiler = new DoctrineProfiler();
+                $profiler->setEnabled(isset($options['profiler_enabled']) && (bool)$options['profiler_enabled']);
+                $this->_em->getConfiguration()->setSQLLogger($profiler);
             }
         }
 
