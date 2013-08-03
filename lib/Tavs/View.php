@@ -3,6 +3,10 @@ namespace Tavs;
 
 use Tavs\Twig\Extension;
 
+/**
+ * Class View
+ * @package Tavs
+ */
 class View extends \Zend_View_Abstract
 {
     /**
@@ -38,9 +42,11 @@ class View extends \Zend_View_Abstract
     /**
      * @see Zend_View_Abstract::addScriptPath()
      */
-    public function addScriptPath($path)
+    public function addScriptPath($paths)
     {
-        $this->_environmnet->getLoader()->addPath($path);
+        foreach ((array)$paths as $path) {
+            $this->_environmnet->getLoader()->addPath($path);
+        }
         return $this;
     }
 

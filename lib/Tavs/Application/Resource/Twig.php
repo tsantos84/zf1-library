@@ -10,7 +10,7 @@ class Twig extends \Zend_Application_Resource_View
     {
         parent::init();
         $viewRenderer = \Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
-        $viewRenderer->setViewSuffix('html.twig');
+        $viewRenderer->setViewSuffix('twig');
     }
 
     /**
@@ -25,6 +25,12 @@ class Twig extends \Zend_Application_Resource_View
 
             if (isset($options['assign']) && is_array($options['assign'])) {
                 $this->_view->assign($options['assign']);
+            }
+
+            if (isset($options['debug']) && (bool) $options['debug']) {
+                $twig = $this->_view->getEngine();
+                $twig->enableDebug();
+                $twig->addExtension(new \Twig_Extension_Debug());
             }
         }
 
