@@ -28,7 +28,6 @@ class DoctrineProfiler extends \Zend_Db_Profiler_Firebug implements SQLLogger
     public function __construct()
     {
         parent::__construct('Doctrine Query Profiler');
-        $this->setEnabled(true);
     }
 
     /**
