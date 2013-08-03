@@ -20,7 +20,7 @@ class DoctrineProfiler extends \Zend_Db_Profiler_Firebug implements SQLLogger
     /**
      * @var integer
      */
-    private $lastQuerId;
+    private $lastQueryId;
 
     /**
      * Construtor
@@ -39,8 +39,8 @@ class DoctrineProfiler extends \Zend_Db_Profiler_Firebug implements SQLLogger
      */
     public function startQuery($sql, array $params = null, array $types = null)
     {
-        $this->lastQuerId = $this->queryStart($sql);
-        $this->getQueryProfile($this->lastQuerId)->bindParams($params);
+        $this->lastQueryId = $this->queryStart($sql);
+        $this->getQueryProfile($this->lastQueryId)->bindParams($params);
     }
 
     /**
@@ -48,6 +48,6 @@ class DoctrineProfiler extends \Zend_Db_Profiler_Firebug implements SQLLogger
      */
     public function stopQuery()
     {
-        $this->queryEnd($this->lastQuerId);
+        $this->queryEnd($this->lastQueryId);
     }
 }
