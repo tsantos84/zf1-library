@@ -43,7 +43,7 @@ class Doctrine extends \Zend_Application_Resource_ResourceAbstract
 
                 // profiler
                 $profiler = new DoctrineProfiler();
-                $profiler->setEnabled(isset($options['profiler_enabled']) && (bool)$options['profiler_enabled']);
+                $profiler->setEnabled(isset($options['debug']) && (bool)$options['debug']);
                 $this->_em->getConfiguration()->setSQLLogger($profiler);
             }
         }
